@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: fabioctetsuo/gatsby-netlify-cms
+  branch: master
+  site_domain: gatsby-netlify-cms.netlify.app
+
+publish_mode: editorial_workflow
+media_folder: "static/assets/img"
+public_folder: "/assets/img"
+
+collections:
+  - name: "blog"
+    label: "Postagens"
+    folder: "posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descrição", name: "description", widget: "string" }
+      - {
+          label: "Data",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD hh:mm:ss",
+        }
+      - { label: "Imagem", name: "featuredImage", widget: "image" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
